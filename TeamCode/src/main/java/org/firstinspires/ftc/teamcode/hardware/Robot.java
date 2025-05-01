@@ -21,9 +21,9 @@ public class Robot extends BaseHardware {
         driveTrain.init();
 
 
-        Picasso.hardwareMap = this.hardwareMap;
-        Picasso.telemetry = this.telemetry;
-        Picasso.init();
+        picasso.hardwareMap = this.hardwareMap;
+        picasso.telemetry = this.telemetry;
+        picasso.init();
 
 
        /*    lighting.hardwareMap = this.hardwareMap;
@@ -55,6 +55,7 @@ public class Robot extends BaseHardware {
     @Override
     public void init_loop() {
         driveTrain.init_loop();
+        picasso.init_loop();
        // lighting.init_loop();
       /*  sensors.init_loop();
         intake.init_loop();
@@ -66,6 +67,7 @@ public class Robot extends BaseHardware {
     @Override
     public void start() {
         driveTrain.start();
+        picasso.start();
        // lighting.start();
       /*  sensors.start();
         intake.start();
@@ -79,6 +81,7 @@ public class Robot extends BaseHardware {
     @Override
     public void loop() {
         driveTrain.loop();
+        picasso.loop();
        //. lighting.loop();
       /*  sensors.loop();
         intake.loop();
@@ -94,6 +97,7 @@ public class Robot extends BaseHardware {
     @Override
     public void stop() {
         driveTrain.stop();
+        picasso.stop();
        // lighting.stop();
        /* sensors.stop();
         intake.stop();

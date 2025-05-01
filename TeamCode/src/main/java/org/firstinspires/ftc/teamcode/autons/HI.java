@@ -100,36 +100,36 @@ public class HI extends OpMode {
                 robot.driveTrain.CmdDrive(0,0,0.0,0);
                 currentStage = stage._20_Forward1;
                 break;
-            case _20_Turn_To_Backdrop:
+            case _20_Forward1:
                 if(robot.driveTrain.getCmdComplete()){
                     robot.driveTrain.CmdDrive(0,0,0.0,0);
-                    currentStage = stage._30_Strafe_Left;
+                    currentStage = stage._30_MarkOff1;
 
                 }
                 break;
-            case _30_Strafe_Left:
+            case _30_MarkOff1:
                 if (robot.driveTrain.getCmdComplete())     {
                     robot.driveTrain.CmdDrive(12,-90,0.35,0);
-                    currentStage = stage._40_Strafe_Right;
+                    currentStage = stage._40_Right1;
                 }
                 break;
-            case _40_Strafe_Right:
+            case _40_Right1:
                 if (robot.driveTrain.getCmdComplete())  {
                     robot.driveTrain.CmdDrive(12,90,0.35,90);
-                    currentStage = stage._50_Turn_Away_From_Backdrop;
+                    currentStage = stage._50_MarkOn2;
                 }
                 break;
-            case _50_Turn_Away_From_Backdrop:
+            case _50_MarkOn2:
                 if (robot.driveTrain.getCmdComplete()){
                     robot.driveTrain.CmdDrive(0,0,0.0,0);
-                    currentStage = stage._60_Drive_To_Wall;
+                    currentStage = stage._60_Backward1;
                 }
 
                 break;
-            case _60_Drive_To_Wall:
+            case _60_Backward1:
                 if (robot.driveTrain.getCmdComplete()) {
                     robot.driveTrain.CmdDrive(10,-180,0.35,0);
-                    currentStage = stage._100_End;
+                    currentStage = stage._220_End;
                 }
 
                 break;
