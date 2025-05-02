@@ -193,9 +193,15 @@ public class Tele_Op extends OpMode {
         }
 
         if (gamepad1.right_trigger > 0.8){
-            robot.intake.doOut();
+            robot.picasso.PAINT();
 
         }
+
+        if (gamepad1.left_trigger > 0.8){
+            robot.picasso.LIFT();
+
+        }
+
         if ((gamepad1.right_trigger <= 0.79) && (gamepad1.right_trigger > 0.10)){
 
         }
@@ -236,6 +242,7 @@ public class Tele_Op extends OpMode {
         }
 
         if (CommonLogic.oneShot(gamepad1.dpad_up, gp1_prev_dpad_up)) {
+
             // if (RBTChassis.subGrabbers.getIsDownRight()) {
             //robot.subGrabbers.cmdMoveUpRight();
             //}
@@ -264,7 +271,7 @@ public class Tele_Op extends OpMode {
 
          //   robot.arm.setCurrentMode(Arm.Mode.TANK_ENTRY);
         //robot.arm.setWristDown();
-        robot.intake.doStop();
+     /*   robot.intake.doStop();
             RobotLog.aa(TAGTeleop, " gp2_prev_left_bumper : " + gp2_prev_left_bumper);
         }
 
@@ -390,7 +397,7 @@ public class Tele_Op extends OpMode {
         if ((gamepad2.left_trigger <= 0.79) && (gamepad2.left_trigger > 0.10)) {
           //  robot.lighting.UpdateBaseColor(RevBlinkinLedDriver.BlinkinPattern.BLUE_VIOLET);
         }
-
+*/
         // Update the previous status for gamepad1
         gp1_prev_a = gamepad1.a;
         gp1_prev_b = gamepad1.b;
@@ -406,8 +413,8 @@ public class Tele_Op extends OpMode {
         gp1_prev_start = gamepad1.start;
 
         // Update the previous status for gamepad 2
-        gp2_prev_a = gamepad2.a;
-        gp2_prev_b = gamepad2.b;
+//        gp2_prev_a = gamepad2.a;
+      /*  gp2_prev_b = gamepad2.b;
         gp2_prev_x = gamepad2.x;
         gp2_prev_y = gamepad2.y;
         gp2_prev_left_bumper = gamepad2.left_bumper;
@@ -499,8 +506,8 @@ public class Tele_Op extends OpMode {
 //    RobotLog.aa(TAGTeleop, " gp2_prev_y : " + gp2_prev_y);
 //    RobotLog.aa(TAGTeleop, " gp2_prev_right_bumper : " + gp2_prev_right_bumper);
 //    RobotLog.aa(TAGTeleop, " gp2_prev_left_bumper : " + gp2_prev_left_bumper);
-        RobotLog.aa(TAGTeleop, " gp2_prev_dpad_up : " + gp2_prev_dpad_up);
-        RobotLog.aa(TAGTeleop, " gp2_prev_dpad_down : " + gp2_prev_dpad_down);
+       // RobotLog.aa(TAGTeleop, " gp2_prev_dpad_up : " + gp2_prev_dpad_up);
+      //  RobotLog.aa(TAGTeleop, " gp2_prev_dpad_down : " + gp2_prev_dpad_down);
 //    RobotLog.aa(TAGTeleop, " gp2_prev_dpad_left : " + gp2_prev_dpad_left);
 //    RobotLog.aa(TAGTeleop, " gp2_prev_dpad_right : " + gp2_prev_dpad_right);
 //

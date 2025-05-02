@@ -97,40 +97,96 @@ public class HI extends OpMode {
                 currentStage = stage._10_MarkOn1;
                 break;
             case _10_MarkOn1:
-                robot.driveTrain.CmdDrive(0,0,0.0,0);
+                robot.picasso.PAINT();
                 currentStage = stage._20_Forward1;
                 break;
             case _20_Forward1:
                 if(robot.driveTrain.getCmdComplete()){
-                    robot.driveTrain.CmdDrive(0,0,0.0,0);
+                    robot.driveTrain.CmdDrive(8,0,0.10,0);
                     currentStage = stage._30_MarkOff1;
 
                 }
                 break;
             case _30_MarkOff1:
                 if (robot.driveTrain.getCmdComplete())     {
-                    robot.driveTrain.CmdDrive(12,-90,0.35,0);
+                    robot.picasso.LIFT();
                     currentStage = stage._40_Right1;
                 }
                 break;
             case _40_Right1:
                 if (robot.driveTrain.getCmdComplete())  {
-                    robot.driveTrain.CmdDrive(12,90,0.35,90);
+                    robot.driveTrain.CmdDrive(4,90,0.10,0);
                     currentStage = stage._50_MarkOn2;
                 }
                 break;
             case _50_MarkOn2:
                 if (robot.driveTrain.getCmdComplete()){
-                    robot.driveTrain.CmdDrive(0,0,0.0,0);
+                    robot.picasso.PAINT();
                     currentStage = stage._60_Backward1;
                 }
 
                 break;
             case _60_Backward1:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(10,-180,0.35,0);
-                    currentStage = stage._220_End;
+                    robot.driveTrain.CmdDrive(8,-180,0.10,0);
+                    currentStage = stage._70_MarkOff2;
                 }
+
+                break;
+
+            case _70_MarkOff2:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(8,-180,0.10,0);
+                    currentStage = stage._80_Forward2;
+                }
+
+                break;
+
+            case _80_Forward2:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(8,-180,0.10,0);
+                    currentStage = stage._100_MarkOn3;
+                }
+
+                break;
+
+            case _100_MarkOn3:
+            if (robot.driveTrain.getCmdComplete()) {
+                robot.picasso.PAINT();
+                currentStage = stage._110_Left1;
+            }
+
+                break;
+
+            case _110_Left1:
+            if (robot.driveTrain.getCmdComplete()) {
+                robot.driveTrain.CmdDrive(4,-90,0.10,0);
+                currentStage = stage._120_MarkOff3;
+            }
+
+                break;
+
+            case _120_MarkOff3:
+            if (robot.driveTrain.getCmdComplete()) {
+                robot.picasso.LIFT();
+                currentStage = stage._130_Right2;
+            }
+
+                break;
+
+            case _130_Right2:
+            if (robot.driveTrain.getCmdComplete()) {
+                robot.driveTrain.CmdDrive(8,90,0.10,0);
+                currentStage = stage._140_MarkOn4;
+            }
+
+                break;
+
+            case _140_MarkOn4:
+            if (robot.driveTrain.getCmdComplete()) {
+                robot.picasso.PAINT();
+                currentStage = stage._150_Backward2;
+            }
 
                 break;
             case _220_End:
