@@ -88,64 +88,235 @@ public class Art extends OpMode {
         telemetry.addData("Auton_Current_Stage ", currentStage);
         robot.loop();
 
-        switch (currentStage){
-            case  _unknown:
+        switch (currentStage) {
+            case _unknown:
                 currentStage = stage._00_preStart;
                 break;
             case _00_preStart:
-                currentStage = stage._10_Drive_Out;
+                currentStage = stage._10_MarkOn1;
                 break;
-            case _10_Drive_Out:
-                robot.driveTrain.CmdDrive(8,0,0.35,0);
-                currentStage = stage._100_End;
+            case _10_MarkOn1:
+                robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                currentStage = stage._20_Forward1;
                 break;
-            case _20_Turn_To_Backdrop:
-                if(robot.driveTrain.getCmdComplete()){
-                    robot.driveTrain.CmdDrive(0,0,0.0,0);
-                    currentStage = stage._30_Strafe_Left;
-
-                }
-                break;
-            case _30_Strafe_Left:
-                if (robot.driveTrain.getCmdComplete())     {
-                    robot.driveTrain.CmdDrive(12,-90,0.35,0);
-                    currentStage = stage._40_Strafe_Right;
-                }
-                break;
-            case _40_Strafe_Right:
-                if (robot.driveTrain.getCmdComplete())  {
-                    robot.driveTrain.CmdDrive(12,90,0.35,90);
-                    currentStage = stage._50_Turn_Away_From_Backdrop;
-                }
-                break;
-            case _50_Turn_Away_From_Backdrop:
-                if (robot.driveTrain.getCmdComplete()){
-                    robot.driveTrain.CmdDrive(0,0,0.0,0);
-                    currentStage = stage._60_Drive_To_Wall;
-                }
-
-                break;
-            case _60_Drive_To_Wall:
+            case _20_Forward1:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(10,-180,0.35,0);
-                    currentStage = stage._100_End;
+                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    currentStage = stage._30_Right1;
+
+                }
+                break;
+            case _30_Right1:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(12, 90, 0.35, 0);
+                    currentStage = stage._40_Backward1;
+                }
+                break;
+            case _40_Backward1:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, -180, 0.35, 90);
+                    currentStage = stage._50_MarkOff1;
+                }
+                break;
+            case _50_MarkOff1:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    currentStage = stage._60_Forward2;
                 }
 
                 break;
-            case _100_End:
-                if(robot.driveTrain.getCmdComplete()){
-                    robot.stop();
+            case _60_Forward2:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    currentStage = stage._70_MarkOn2;
+                }
 
+                break;
+            case _80_Left1:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, -90, 0.35, 0);
+                    currentStage = stage._100_MarkOff2;
+
+                }
+
+                break;
+            case _100_MarkOff2:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    currentStage = stage._110_Right2;
+
+                }
+
+                break;
+            case _110_Right2:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(10, -180, 0.35, 0);
+                    currentStage = stage._120_MarkOn3;
+
+                }
+
+                break;
+            case _120_MarkOn3:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    currentStage = stage._130_Right3;
+
+                }
+
+                break;
+            case _130_Right3:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 90, 0.35, 0);
+                    currentStage = stage._140_Forward3;
+
+                }
+
+                break;
+            case _140_Forward3:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    currentStage = stage._150_Left2;
+
+                }
+
+                break;
+            case _150_Left2:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, -90, 0.35, 0);
+                    currentStage = stage._160_Backward2;
+
+                }
+
+                break;
+            case _160_Backward2:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, -180, 0.35, 0);
+                    currentStage = stage._170_MarkOff3;
+
+                }
+
+                break;
+            case _170_MarkOff3:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    currentStage = stage._180_Forward4;
+
+                }
+
+                break;
+            case _180_Forward4:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    currentStage = stage._190_Right4;
+
+                }
+
+                break;
+            case _190_Right4:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 90, 0.35, 0);
+                    currentStage = stage._195_MarkOn4;
+
+                }
+
+                break;
+            case _195_MarkOn4:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    currentStage = stage._200_HeadingRight;
+
+                }
+
+                break;
+            case _200_HeadingRight:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 135, 0.35, 0);
+                    currentStage = stage._210_MarkOff4;
+
+                }
+
+                break;
+            case _210_MarkOff4:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    currentStage = stage._220_Right5;
+
+                }
+
+                break;
+            case _220_Right5:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 90, 0.35, 0);
+                    currentStage = stage._230_MarkOn5;
+
+                }
+
+                break;
+            case _230_MarkOn5:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    currentStage = stage._240_Forward5;
+
+                }
+
+                break;
+            case _240_Forward5:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    currentStage = stage._245_MarkOff5;
+
+                }
+
+                break;
+            case _245_MarkOff5:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    currentStage = stage._250_Left3;
+
+                }
+
+                break;
+            case _250_Left3:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, -90, 0.35, 0);
+                    currentStage = stage._260_MarkOn6;
+
+                }
+
+                break;
+            case _260_MarkOn6:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    currentStage = stage._270_Right6;
+
+                }
+
+                break;
+            case _270_Right6:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 90, 0.35, 0);
+                    currentStage = stage._280_ExitLeft;
+
+                }
+
+                break;
+            case _280_ExitLeft:
+                if(robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, -90, 0.35, 0);
+                    currentStage = stage._290_End;
+
+                }
+
+                break;
+            case _290_End:
+                if(robot.driveTrain.getCmdComplete()) {
 
                 }
 
 
 
 
-
-
-
-                break;
+                    break;
         }
 
 
