@@ -96,7 +96,7 @@ public class Art extends OpMode {
                 currentStage = stage._10_MarkOn1;
                 break;
             case _10_MarkOn1:
-                robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                robot.picasso.PAINT();
                 currentStage = stage._20_Forward1;
                 break;
             case _20_Forward1:
@@ -120,7 +120,7 @@ public class Art extends OpMode {
                 break;
             case _50_MarkOff1:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    robot.picasso.LIFT();
                     currentStage = stage._60_Forward2;
                 }
 
@@ -134,7 +134,7 @@ public class Art extends OpMode {
                 break;
             case _70_MarkOn2:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0, 0);
+                    robot.picasso.PAINT();
                     currentStage = stage._80_Left1;
 
                 }
@@ -151,7 +151,7 @@ public class Art extends OpMode {
                 break;
             case _100_MarkOff2:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    robot.picasso.LIFT();
                     currentStage = stage._110_Right2;
 
                 }
@@ -167,7 +167,7 @@ public class Art extends OpMode {
                 break;
             case _120_MarkOn3:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    robot.picasso.PAINT();
                     currentStage = stage._130_Right3;
 
                 }
@@ -207,7 +207,7 @@ public class Art extends OpMode {
                 break;
             case _170_MarkOff3:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    robot.picasso.LIFT();
                     currentStage = stage._180_Forward4;
 
                 }
@@ -231,7 +231,7 @@ public class Art extends OpMode {
                 break;
             case _195_MarkOn4:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    robot.picasso.PAINT();
                     currentStage = stage._200_HeadingRight;
 
                 }
@@ -247,7 +247,7 @@ public class Art extends OpMode {
                 break;
             case _210_MarkOff4:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    robot.picasso.LIFT();
                     currentStage = stage._220_Right5;
 
                 }
@@ -263,7 +263,7 @@ public class Art extends OpMode {
                 break;
             case _230_MarkOn5:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    robot.picasso.PAINT();
                     currentStage = stage._240_Forward5;
 
                 }
@@ -279,7 +279,7 @@ public class Art extends OpMode {
                 break;
             case _245_MarkOff5:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    robot.picasso.LIFT();
                     currentStage = stage._250_Left3;
 
                 }
@@ -295,7 +295,7 @@ public class Art extends OpMode {
                 break;
             case _260_MarkOn6:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.0, 0);
+                    robot.picasso.PAINT();
                     currentStage = stage._270_Right6;
 
                 }
