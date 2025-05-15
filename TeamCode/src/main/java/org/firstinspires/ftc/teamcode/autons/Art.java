@@ -101,20 +101,20 @@ public class Art extends OpMode {
                 break;
             case _20_Forward1:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    robot.driveTrain.CmdDrive(4, 0, 0.2, 0);
                     currentStage = stage._30_Right1;
 
                 }
                 break;
             case _30_Right1:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(12, 90, 0.35, 0);
+                    robot.driveTrain.CmdDrive(3, 90, 0.2, 0);
                     currentStage = stage._40_Backward1;
                 }
                 break;
             case _40_Backward1:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, -180, 0.35, 90);
+                    robot.driveTrain.CmdDrive(4, -180, 0.2, 90);
                     currentStage = stage._50_MarkOff1;
                 }
                 break;
@@ -127,14 +127,23 @@ public class Art extends OpMode {
                 break;
             case _60_Forward2:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    robot.driveTrain.CmdDrive(2, 0, 0.2, 0);
                     currentStage = stage._70_MarkOn2;
                 }
 
                 break;
+            case _70_MarkOn2:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.driveTrain.CmdDrive(0, 0, 0, 0);
+                    currentStage = stage._80_Left1;
+
+                }
+
+
+                break;
             case _80_Left1:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, -90, 0.35, 0);
+                    robot.driveTrain.CmdDrive(3, -90, 0.2, 0);
                     currentStage = stage._100_MarkOff2;
 
                 }
@@ -150,7 +159,7 @@ public class Art extends OpMode {
                 break;
             case _110_Right2:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(10, -180, 0.35, 0);
+                    robot.driveTrain.CmdDrive(4, -180, 0.2, 0);
                     currentStage = stage._120_MarkOn3;
 
                 }
@@ -166,7 +175,7 @@ public class Art extends OpMode {
                 break;
             case _130_Right3:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 90, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, 90, 0.2, 0);
                     currentStage = stage._140_Forward3;
 
                 }
@@ -174,7 +183,7 @@ public class Art extends OpMode {
                 break;
             case _140_Forward3:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, 0, 0.2, 0);
                     currentStage = stage._150_Left2;
 
                 }
@@ -182,7 +191,7 @@ public class Art extends OpMode {
                 break;
             case _150_Left2:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, -90, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, -90, 0.2, 0);
                     currentStage = stage._160_Backward2;
 
                 }
@@ -190,7 +199,7 @@ public class Art extends OpMode {
                 break;
             case _160_Backward2:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, -180, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, -180, 0.2, 0);
                     currentStage = stage._170_MarkOff3;
 
                 }
@@ -206,7 +215,7 @@ public class Art extends OpMode {
                 break;
             case _180_Forward4:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, 0, 0.2, 0);
                     currentStage = stage._190_Right4;
 
                 }
@@ -214,7 +223,7 @@ public class Art extends OpMode {
                 break;
             case _190_Right4:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 90, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, 90, 0.2, 0);
                     currentStage = stage._195_MarkOn4;
 
                 }
@@ -230,7 +239,7 @@ public class Art extends OpMode {
                 break;
             case _200_HeadingRight:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 135, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, 135, 0.2, 0);
                     currentStage = stage._210_MarkOff4;
 
                 }
@@ -246,7 +255,7 @@ public class Art extends OpMode {
                 break;
             case _220_Right5:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 90, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, 90, 0.2, 0);
                     currentStage = stage._230_MarkOn5;
 
                 }
@@ -262,7 +271,7 @@ public class Art extends OpMode {
                 break;
             case _240_Forward5:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 0, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, 0, 0.2, 0);
                     currentStage = stage._245_MarkOff5;
 
                 }
@@ -278,7 +287,7 @@ public class Art extends OpMode {
                 break;
             case _250_Left3:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, -90, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, -90, 0.2, 0);
                     currentStage = stage._260_MarkOn6;
 
                 }
@@ -294,7 +303,7 @@ public class Art extends OpMode {
                 break;
             case _270_Right6:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, 90, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, 90, 0.2, 0);
                     currentStage = stage._280_ExitLeft;
 
                 }
@@ -302,14 +311,14 @@ public class Art extends OpMode {
                 break;
             case _280_ExitLeft:
                 if(robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(0, -90, 0.35, 0);
+                    robot.driveTrain.CmdDrive(0, -90, 0.2, 0);
                     currentStage = stage._290_End;
 
                 }
 
                 break;
             case _290_End:
-                if(robot.driveTrain.getCmdComplete()) {
+            {
 
                 }
 
