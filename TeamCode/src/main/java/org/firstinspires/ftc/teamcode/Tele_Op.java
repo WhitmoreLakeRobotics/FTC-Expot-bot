@@ -121,7 +121,7 @@ public class Tele_Op extends OpMode {
     public void loop() {
         robot.loop();
         write2Log();
-        tHeading = getTurnDirection();
+        tHeading = robot.driveTrain.getCurrentHeading();  //getTurnDirection
         if (Math.abs(gamepad1.right_stick_x) > 0.04) {
             bAutoTurn = false;
         }
@@ -266,11 +266,11 @@ public class Tele_Op extends OpMode {
         //***********   Gamepad 2 controls ********
 
         // Bumpers close and open the gripper
-        if (CommonLogic.oneShot(gamepad2.left_bumper, gp2_prev_left_bumper)) {
-         //   robot.lighting.UpdateBaseColor(RevBlinkinLedDriver.BlinkinPattern.LIME);
+        if (CommonLogic.oneShot(gamepad2.left_bumper, gp2_prev_left_bumper)) {}
+            //   robot.lighting.UpdateBaseColor(RevBlinkinLedDriver.BlinkinPattern.LIME);
 
-         //   robot.arm.setCurrentMode(Arm.Mode.TANK_ENTRY);
-        //robot.arm.setWristDown();
+            //   robot.arm.setCurrentMode(Arm.Mode.TANK_ENTRY);
+            //robot.arm.setWristDown();
      /*   robot.intake.doStop();
             RobotLog.aa(TAGTeleop, " gp2_prev_left_bumper : " + gp2_prev_left_bumper);
         }
@@ -398,21 +398,21 @@ public class Tele_Op extends OpMode {
           //  robot.lighting.UpdateBaseColor(RevBlinkinLedDriver.BlinkinPattern.BLUE_VIOLET);
         }
 */
-        // Update the previous status for gamepad1
-        gp1_prev_a = gamepad1.a;
-        gp1_prev_b = gamepad1.b;
-        gp1_prev_x = gamepad1.x;
-        gp1_prev_y = gamepad1.y;
-        gp1_prev_left_bumper = gamepad1.left_bumper;
-        gp1_prev_right_bumper = gamepad1.right_bumper;
-        gp1_prev_dpad_down = gamepad1.dpad_down;
-        gp1_prev_dpad_left = gamepad1.dpad_left;
-        gp1_prev_dpad_up = gamepad1.dpad_up;
-        gp1_prev_dpad_right = gamepad1.dpad_right;
-        gp1_prev_back = gamepad1.back;
-        gp1_prev_start = gamepad1.start;
+            // Update the previous status for gamepad1
+            gp1_prev_a = gamepad1.a;
+            gp1_prev_b = gamepad1.b;
+            gp1_prev_x = gamepad1.x;
+            gp1_prev_y = gamepad1.y;
+            gp1_prev_left_bumper = gamepad1.left_bumper;
+            gp1_prev_right_bumper = gamepad1.right_bumper;
+            gp1_prev_dpad_down = gamepad1.dpad_down;
+            gp1_prev_dpad_left = gamepad1.dpad_left;
+            gp1_prev_dpad_up = gamepad1.dpad_up;
+            gp1_prev_dpad_right = gamepad1.dpad_right;
+            gp1_prev_back = gamepad1.back;
+            gp1_prev_start = gamepad1.start;
 
-        // Update the previous status for gamepad 2
+            // Update the previous status for gamepad 2
 //        gp2_prev_a = gamepad2.a;
       /*  gp2_prev_b = gamepad2.b;
         gp2_prev_x = gamepad2.x;
@@ -432,6 +432,8 @@ public class Tele_Op extends OpMode {
     /*
      * Code to run ONCE after the driver hits STOP
      */
+      }
+
     @Override
     public void stop() {
 
@@ -487,6 +489,8 @@ public class Tele_Op extends OpMode {
 
     //*********************************************************************************************
     private void  write2Log() {
+    }
+}
 
 //
 //    RobotLog.aa(TAGTeleop, " gp1_prev_a : " + gp1_prev_a);
@@ -513,7 +517,7 @@ public class Tele_Op extends OpMode {
 //
 //
 
-    }
 
-}
+
+
 

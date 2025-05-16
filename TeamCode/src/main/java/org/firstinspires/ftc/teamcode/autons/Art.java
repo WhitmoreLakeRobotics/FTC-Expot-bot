@@ -9,8 +9,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.teamcode.common.Settings;
 import org.firstinspires.ftc.teamcode.hardware.Robot;
 
-@Disabled
-@Autonomous(name = "Test_drive", group = "Auton")
+//@Disabled
+@Autonomous(name = "ART", group = "Auton")
 // @Autonomous(...) is the other common choice
 
 public class Art extends OpMode {

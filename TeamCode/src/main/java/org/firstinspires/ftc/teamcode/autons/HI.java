@@ -98,11 +98,13 @@ public class HI extends OpMode {
                 break;
             case _10_MarkOn1:
                 robot.picasso.PAINT();
+                runtime.reset();
                 currentStage = stage._20_Forward1;
                 break;
             case _20_Forward1:
-                if(robot.driveTrain.getCmdComplete()){
+                if(runtime.milliseconds()>= 300){
                     robot.driveTrain.CmdDrive(8,0,0.10,0);
+                    runtime.reset();
                     currentStage = stage._30_MarkOff1;
 
                 }

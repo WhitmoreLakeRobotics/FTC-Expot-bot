@@ -29,8 +29,8 @@ public class Picasso extends BaseHardware {
 
     private boolean cmdComplete = true;
     public Mode CurrentMode = Mode.NOTPAINT;
-    public final double PAINT = 1;
-    public final double LIFT = 0;
+    public final double PAINT = 0.5;
+    public final double LIFT = 0.6;
 
 
     /**
