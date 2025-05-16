@@ -12,7 +12,7 @@ import org.firstinspires.ftc.teamcode.hardware.Robot;
 
 
 @Disabled
-@Autonomous(name = "Test_drive", group = "Auton")
+@Autonomous(name = "Parthenon", group = "Auton")
 // @Autonomous(...) is the other common choice
 
 public class Parthenon extends OpMode {

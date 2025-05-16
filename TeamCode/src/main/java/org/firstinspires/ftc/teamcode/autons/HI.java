@@ -10,8 +10,8 @@ import org.firstinspires.ftc.teamcode.hardware.Robot;
 
 
 
-@Disabled
-@Autonomous(name = "Test_drive", group = "Auton")
+//@Disabled
+@Autonomous(name = "HI", group = "Auton")
 // @Autonomous(...) is the other common choice
 
 public class HI extends OpMode {
@@ -140,7 +140,8 @@ public class HI extends OpMode {
 
             case _70_MarkOff2:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(8,-180,0.10,0);
+                    robot.picasso.LIFT();
+                    runtime.reset();
                     currentStage = stage._80_Forward2;
                 }
 
@@ -148,7 +149,7 @@ public class HI extends OpMode {
 
             case _80_Forward2:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(8,-180,0.10,0);
+                    robot.driveTrain.CmdDrive(8,0,0.10,0);
                     currentStage = stage._100_MarkOn3;
                 }
 
