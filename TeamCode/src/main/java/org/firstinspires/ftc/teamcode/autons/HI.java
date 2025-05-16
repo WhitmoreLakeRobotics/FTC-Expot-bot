@@ -149,7 +149,7 @@ public class HI extends OpMode {
 
             case _80_Forward2:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(8,0,0.10,0);
+                    robot.driveTrain.CmdDrive(4,0,0.10,0);
                     currentStage = stage._100_MarkOn3;
                 }
 
