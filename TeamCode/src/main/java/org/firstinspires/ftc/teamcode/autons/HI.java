@@ -112,11 +112,12 @@ public class HI extends OpMode {
             case _30_MarkOff1:
                 if (robot.driveTrain.getCmdComplete())     {
                     robot.picasso.LIFT();
+                    runtime.reset();
                     currentStage = stage._40_Right1;
                 }
                 break;
             case _40_Right1:
-                if (robot.driveTrain.getCmdComplete())  {
+                if (runtime.milliseconds()>= 300) {
                     robot.driveTrain.CmdDrive(4,90,0.10,0);
                     currentStage = stage._50_MarkOn2;
                 }
@@ -124,12 +125,13 @@ public class HI extends OpMode {
             case _50_MarkOn2:
                 if (robot.driveTrain.getCmdComplete()){
                     robot.picasso.PAINT();
+                    runtime.reset();
                     currentStage = stage._60_Backward1;
                 }
 
                 break;
             case _60_Backward1:
-                if (robot.driveTrain.getCmdComplete()) {
+                if (runtime.milliseconds()>= 300) {
                     robot.driveTrain.CmdDrive(8,-180,0.10,0);
                     currentStage = stage._70_MarkOff2;
                 }
@@ -155,13 +157,14 @@ public class HI extends OpMode {
             case _100_MarkOn3:
             if (robot.driveTrain.getCmdComplete()) {
                 robot.picasso.PAINT();
+                runtime.reset();
                 currentStage = stage._110_Left1;
             }
 
                 break;
 
             case _110_Left1:
-            if (robot.driveTrain.getCmdComplete()) {
+                if (runtime.milliseconds()>= 300) {
                 robot.driveTrain.CmdDrive(4,-90,0.10,0);
                 currentStage = stage._120_MarkOff3;
             }
@@ -171,13 +174,14 @@ public class HI extends OpMode {
             case _120_MarkOff3:
             if (robot.driveTrain.getCmdComplete()) {
                 robot.picasso.LIFT();
+                runtime.reset();
                 currentStage = stage._130_Right2;
             }
 
                 break;
 
             case _130_Right2:
-            if (robot.driveTrain.getCmdComplete()) {
+                if (runtime.milliseconds()>= 300) {
                 robot.driveTrain.CmdDrive(8,90,0.10,0);
                 currentStage = stage._140_MarkOn4;
             }
@@ -187,10 +191,71 @@ public class HI extends OpMode {
             case _140_MarkOn4:
             if (robot.driveTrain.getCmdComplete()) {
                 robot.picasso.PAINT();
+                runtime.reset();
                 currentStage = stage._150_Backward2;
             }
 
                 break;
+
+
+            case _150_Backward2:
+                if (runtime.milliseconds()>= 300) {
+                    robot.driveTrain.CmdDrive(4,-180,0.10,0);
+                    currentStage = stage._160_MarkOff4;
+                }
+
+
+                break;
+
+            case _160_MarkOff4:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._170_Forward3;
+                }
+
+                break;
+
+            case _170_Forward3:
+                if (runtime.milliseconds()>= 300) {
+                    robot.driveTrain.CmdDrive(6,0,0.10,0);
+                    currentStage = stage._180_MarkOn5;
+                }
+
+                break;
+
+            case _180_MarkOn5:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.picasso.PAINT();
+                    runtime.reset();
+                    currentStage = stage._190_Forward4;
+                }
+
+                break;
+
+            case _190_Forward4:
+                if (runtime.milliseconds()>= 300) {
+                    robot.driveTrain.CmdDrive(1,0,0.10,0);
+                    currentStage = stage._200_MarkOff5;
+                }
+
+                break;
+
+            case _200_MarkOff5:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._210_ExitStageLeft;
+                }
+
+                break;
+
+            case _210_ExitStageLeft:
+                if (runtime.milliseconds()>= 300) {
+                    robot.driveTrain.CmdDrive(12,-90,0.10,0);
+                    currentStage = stage._220_End;
+                }
+                
             case _220_End:
                 if(robot.driveTrain.getCmdComplete()){
                     robot.stop();
