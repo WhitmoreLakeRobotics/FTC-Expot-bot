@@ -89,7 +89,7 @@ public class Parthenon extends OpMode {
 
         telemetry.addData("Auton_Current_Stage ", currentStage);
         robot.loop();
-
+             /*
         switch (currentStage){
             case  _unknown:
                 currentStage = stage._00_preStart;
@@ -430,7 +430,7 @@ public class Parthenon extends OpMode {
                 break;
         }
 
-
+*/
 
     }  //  loop
 
