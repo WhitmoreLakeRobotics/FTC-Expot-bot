@@ -148,7 +148,7 @@ public class HI extends OpMode {
                 break;
 
             case _80_Forward2:
-                if (robot.driveTrain.getCmdComplete()) {
+                if (runtime.milliseconds()>= 300) {
                     robot.driveTrain.CmdDrive(4,0,0.10,0);
                     currentStage = stage._100_MarkOn3;
                 }
@@ -171,7 +171,6 @@ public class HI extends OpMode {
             }
 
                 break;
-
             case _120_MarkOff3:
             if (robot.driveTrain.getCmdComplete()) {
                 robot.picasso.LIFT();
@@ -297,7 +296,11 @@ public class HI extends OpMode {
         _70_MarkOff2,
         _80_Forward2,
         _100_MarkOn3,
+        _102ForwardE,
+        _104_MarkOffE,
         _110_Left1,
+        _112_MarkOnE,
+        _114_BackwardE,
         _120_MarkOff3,
         _130_Right2,
         _140_MarkOn4,
