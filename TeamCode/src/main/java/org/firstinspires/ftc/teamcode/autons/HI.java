@@ -102,7 +102,7 @@ public class HI extends OpMode {
                 currentStage = stage._20_Forward1;
                 break;
             case _20_Forward1:
-                if(runtime.milliseconds()>= 300){
+                if(runtime.milliseconds()>= 600){
                     robot.driveTrain.CmdDrive(8,0,0.10,0);
                     runtime.reset();
                     currentStage = stage._30_MarkOff1;
@@ -252,7 +252,7 @@ public class HI extends OpMode {
 
             case _210_ExitStageLeft:
                 if (runtime.milliseconds()>= 300) {
-                    robot.driveTrain.CmdDrive(12,-90,0.10,0);
+                    robot.driveTrain.CmdDrive(18,-90,0.10,0);
                     currentStage = stage._220_End;
                 }
 

@@ -115,7 +115,7 @@ public class Art extends OpMode {
                 break;
             case _40_Backward1:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(3, -180, 0.2, 90);
+                    robot.driveTrain.CmdDrive(3, -180, 0.2, 0);
                     currentStage = stage._50_MarkOff1;
                 }
                 break;
@@ -338,7 +338,8 @@ public class Art extends OpMode {
 
                 break;
             case _290_End:
-            {
+                if(robot.driveTrain.getCmdComplete()){
+                    robot.stop();
 
                 }
 
