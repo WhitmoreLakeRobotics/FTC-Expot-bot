@@ -19,7 +19,7 @@ public class bot extends OpMode {
     Robot robot = new Robot();
 
 
-
+    
 
     private stage currentStage = stage._unknown;
     // declare auton power variables
@@ -182,13 +182,100 @@ public class bot extends OpMode {
 
                 break;
 
+            case _130_MarkOff2:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._140_Right4;
+                }
+                break;
+
+            case _140_Right4:
+                if(runtime.milliseconds()>= 600){
+                    robot.driveTrain.CmdDrive(6,90,0.10,0);
+                    currentStage = stage._150_MarkOn;
+
+                }
+                break;
+
+            case _150_MarkOn:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.picasso.PAINT();
+                    runtime.reset();
+                    currentStage = stage._160_Right5;
+                }
+                break;
+
+            case _160_Right5:
+                if(runtime.milliseconds()>= 600){
+                    robot.driveTrain.CmdDrive(4,90,0.10,0);
+                    currentStage = stage._170_MarkOff3;
+
+                }
+                break;
+
+            case _170_MarkOff3:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._180_Forward3;
+                }
+                break;
+
+            case _180_Forward3:
+                if(runtime.milliseconds()>= 600){
+                    robot.driveTrain.CmdDrive(4,0,0.10,0);
+                    currentStage = stage._190_Left3;
+
+                }
+                break;
+
+            case _190_Left3:
+                if (robot.driveTrain.getCmdComplete()){
+                    robot.driveTrain.CmdDrive(2,-90,0.10,0);
+                    currentStage = stage._200_MarkOn;
+                }
+
+                break;
+
+            case _200_MarkOn:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.picasso.PAINT();
+                    runtime.reset();
+                    currentStage = stage._210_Back3;
+                }
+                break;
+
+            case _210_Back3:
+                if(runtime.milliseconds()>= 600){
+                    robot.driveTrain.CmdDrive(8,-180,0.10,0);
+                    currentStage = stage._220_MarkOff4;
+
+                }
+                break;
+
+            case _220_MarkOff4:
+                if (robot.driveTrain.getCmdComplete()) {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._230_ExitStageRight1;
+                }
+                break;
+
+            case _230_ExitStageRight1:
+                if(runtime.milliseconds()>= 600){
+                    robot.driveTrain.CmdDrive(24,90,0.10,0);
+                    currentStage = stage._240_End;
+
+                }
+                break;
+
             case _240_End:
                 if(robot.driveTrain.getCmdComplete()){
                     robot.stop();
 
 
                 }
-
 
 
 
