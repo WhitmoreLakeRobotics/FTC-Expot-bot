@@ -94,46 +94,49 @@ public class FTC extends OpMode {
                 currentStage = stage._00_preStart;
                 break;
             case _00_preStart:
-                currentStage = stage._10_Drive_Out;
+                currentStage = stage._05_MarkOn_0;
                 break;
-            case _10_Drive_Out:
-                robot.driveTrain.CmdDrive(8,0,0.35,0);
-                currentStage = stage._100_End;
+            case _05_MarkOn_0:
+                robot.picasso.PAINT();
+                runtime.reset();
+                currentStage = stage._10_Forward_1;
                 break;
-            case _20_Turn_To_Backdrop:
-                if(robot.driveTrain.getCmdComplete()){
-                    robot.driveTrain.CmdDrive(0,0,0.0,0);
-                    currentStage = stage._30_Strafe_Left;
+            case _10_Forward_1:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(8,0,0.10,0);
+                    currentStage = stage._20_Right_1;
 
                 }
                 break;
-            case _30_Strafe_Left:
+            case _20_Right_1:
                 if (robot.driveTrain.getCmdComplete())     {
-                    robot.driveTrain.CmdDrive(12,-90,0.35,0);
-                    currentStage = stage._40_Strafe_Right;
+                    robot.driveTrain.CmdDrive(4,-90,0.10,0);
+                    currentStage = stage._30_MarkOff_1;
                 }
                 break;
-            case _40_Strafe_Right:
+            case _30_MarkOff_1:
                 if (robot.driveTrain.getCmdComplete())  {
-                    robot.driveTrain.CmdDrive(12,90,0.35,90);
-                    currentStage = stage._50_Turn_Away_From_Backdrop;
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._40_Backward_1;
                 }
                 break;
-            case _50_Turn_Away_From_Backdrop:
-                if (robot.driveTrain.getCmdComplete()){
-                    robot.driveTrain.CmdDrive(0,0,0.0,0);
-                    currentStage = stage._60_Drive_To_Wall;
+            case _40_Backward_1:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(4,-180,0.10,0);
+                    currentStage = stage._50_MarkOn_1;
                 }
 
                 break;
-            case _60_Drive_To_Wall:
+            case _50_MarkOn_1:
                 if (robot.driveTrain.getCmdComplete()) {
-                    robot.driveTrain.CmdDrive(10,-180,0.35,0);
-                    currentStage = stage._100_End;
+                    robot.picasso.PAINT();
+                    runtime.reset();
+                    currentStage = stage._60_Left_1;
                 }
 
                 break;
-            case _100_End:
+            case _270_End:
                 if(robot.driveTrain.getCmdComplete()){
                     robot.stop();
 
@@ -164,15 +167,34 @@ public class FTC extends OpMode {
     private enum stage {
         _unknown,
         _00_preStart,
-        _10_Drive_Out,
-        _20_Turn_To_Backdrop,
-        _30_Strafe_Left,
-        _40_Strafe_Right,
-        _50_Turn_Away_From_Backdrop,
-        _60_Drive_To_Wall,
-        _70_Turn,
-        _80_Drive,
-        _100_End
+        _05_MarkOn_0,
+        _10_Forward_1,
+        _20_Right_1,
+        _30_MarkOff_1,
+        _40_Backward_1,
+        _50_MarkOn_1,
+        _60_Left_1,
+        _70_MarkOff_2,
+        _80_Forward_2,
+        _90_Right_2,
+        _100_MarkOn_2,
+        _110_Right_3,
+        _120_MarkOff_3,
+        _130_Left_2,
+        _140_MarkOn_3,
+        _150_Backward_2,
+        _160_MarkOff_4,
+        _170_Left_3,
+        _180_MarkOn_4,
+        _190_Forward_3,
+        _200_Left_4,
+        _210_MarkOff_5,
+        _220_Backward_3,
+        _230_MarkOn_5,
+        _240_Right_4,
+        _250_MarkOff_6,
+        _260_ExitStageRight_1,
+        _270_End
 
 
     }
