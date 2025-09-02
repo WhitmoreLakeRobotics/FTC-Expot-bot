@@ -136,6 +136,167 @@ public class FTC extends OpMode {
                 }
 
                 break;
+
+            case _60_Left_1:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(4,-90,0.10,0);
+                    currentStage = stage._70_MarkOff_2;
+                }
+
+                break;
+
+
+            case _70_MarkOff_2:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._80_Forward_2;
+                }
+                break;
+
+            case _80_Forward_2:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(4,0,0.10,0);
+                    currentStage = stage._90_Right_2;
+                }
+
+                break;
+
+            case _90_Right_2:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.driveTrain.CmdDrive(6,90,0.10,0);
+                    currentStage = stage._100_MarkOn_2;
+                }
+                break;
+
+            case _100_MarkOn_2:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.picasso.PAINT();
+                    runtime.reset();
+                    currentStage = stage._110_Right_3;
+                }
+                break;
+
+            case _110_Right_3:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(4,90,0.10,0);
+                    currentStage = stage._120_MarkOff_3;
+                }
+
+                break;
+
+            case _120_MarkOff_3:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._130_Left_2;
+                }
+                break;
+
+            case _130_Left_2:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(2,-90,0.10,0);
+                    currentStage = stage._140_MarkOn_3;
+                }
+                break;
+
+            case _140_MarkOn_3:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.picasso.PAINT();
+                    runtime.reset();
+                    currentStage = stage._150_Backward_2;
+                }
+                break;
+
+            case _150_Backward_2:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(8,-180,0.10,0);
+                    currentStage = stage._160_MarkOff_4;
+                }
+                break;
+
+            case _160_MarkOff_4:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._170_Right2_3;
+                }
+                break;
+
+            case _170_Right2_3:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(4,90,0.10,0);
+                    currentStage = stage._180_MarkOn_4;
+                }
+                break;
+
+            case _180_MarkOn_4:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.picasso.PAINT();
+                    runtime.reset();
+                    currentStage = stage._190_Forward_3;
+                }
+                break;
+
+            case _190_Forward_3:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(8,0,0.10,0);
+                    currentStage = stage._200_Right2_4;
+                }
+                break;
+
+            case _200_Right2_4:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.driveTrain.CmdDrive(4,90,0.10,0);
+                    currentStage = stage._210_MarkOff_5;
+                }
+                break;
+
+            case _210_MarkOff_5:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._220_Backward_3;
+                }
+                break;
+
+            case _220_Backward_3:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(8,-180,0.10,0);
+                    currentStage = stage._230_MarkOn_5;
+                }
+                break;
+
+            case _230_MarkOn_5:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.picasso.PAINT();
+                    runtime.reset();
+                    currentStage = stage._240_Left2_4;
+                }
+                break;
+
+            case _240_Left2_4:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(4,-90,0.10,0);
+                    currentStage = stage._250_MarkOff_6;
+                }
+                break;
+
+            case _250_MarkOff_6:
+                if (robot.driveTrain.getCmdComplete())     {
+                    robot.picasso.LIFT();
+                    runtime.reset();
+                    currentStage = stage._260_ExitStageRight_1;
+                }
+                break;
+
+            case _260_ExitStageRight_1:
+                if (runtime.milliseconds() >= 600){
+                    robot.driveTrain.CmdDrive(24,90,0.10,0);
+                    currentStage = stage._270_End;
+                }
+                break;
+
             case _270_End:
                 if(robot.driveTrain.getCmdComplete()){
                     robot.stop();
@@ -184,14 +345,14 @@ public class FTC extends OpMode {
         _140_MarkOn_3,
         _150_Backward_2,
         _160_MarkOff_4,
-        _170_Left_3,
+        _170_Right2_3,
         _180_MarkOn_4,
         _190_Forward_3,
-        _200_Left_4,
+        _200_Right2_4,
         _210_MarkOff_5,
         _220_Backward_3,
         _230_MarkOn_5,
-        _240_Right_4,
+        _240_Left2_4,
         _250_MarkOff_6,
         _260_ExitStageRight_1,
         _270_End
